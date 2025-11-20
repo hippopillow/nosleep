@@ -19,7 +19,7 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-10px); }
         }
 
         @keyframes pulse {
@@ -28,145 +28,76 @@
         }
 
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), 0 0 80px rgba(139, 92, 246, 0.3); }
+            0%, 100% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.5); }
         }
 
         html, body {
             width: 100%;
             height: 100%;
-            margin: 0;
-            padding: 0;
             overflow: hidden;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #e4e4e4;
             position: relative;
         }
 
-        body::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s ease-in-out infinite;
-            pointer-events: none;
-        }
-
         .orb {
             position: absolute;
             border-radius: 50%;
             filter: blur(60px);
-            opacity: 0.3;
+            opacity: 0.2;
             pointer-events: none;
-            animation: float 10s ease-in-out infinite;
         }
 
         .orb1 {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent);
-            top: -100px;
-            left: -100px;
-            animation-delay: 0s;
+            top: -50px;
+            left: -50px;
         }
 
         .orb2 {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent);
             bottom: -50px;
             right: -50px;
-            animation-delay: 2s;
-        }
-
-        .orb3 {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent);
-            top: 50%;
-            right: 10%;
-            animation-delay: 4s;
         }
 
         .container {
             text-align: center;
-            max-width: 700px;
             width: 90%;
-            background: rgba(20, 20, 35, 0.6);
+            max-width: 500px;
+            background: rgba(20, 20, 35, 0.7);
             backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 60px 50px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 
-                        0 0 100px rgba(139, 92, 246, 0.1),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.05);
             position: relative;
             z-index: 10;
-            transform-style: preserve-3d;
-        }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                rgba(139, 92, 246, 0.3), 
-                rgba(236, 72, 153, 0.3), 
-                rgba(59, 130, 246, 0.3),
-                rgba(139, 92, 246, 0.3));
-            border-radius: 30px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .container:hover::before {
-            opacity: 1;
-        }
-
-        .icon-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
         }
 
         .icon {
-            font-size: 6rem;
-            filter: drop-shadow(0 10px 30px rgba(139, 92, 246, 0.5));
+            font-size: 4rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 8px 20px rgba(139, 92, 246, 0.4));
             animation: float 3s ease-in-out infinite;
-            display: inline-block;
-        }
-
-        .icon-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
         }
 
         h1 {
-            font-size: 4.5rem;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            margin-bottom: 8px;
             font-weight: 800;
             background: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6);
             background-size: 200% 200%;
@@ -174,32 +105,27 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: gradientShift 5s ease infinite;
-            letter-spacing: -2px;
-            line-height: 1;
+            letter-spacing: -1px;
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 50px;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.5);
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .status-container {
-            perspective: 1000px;
-            margin-bottom: 40px;
-        }
-
         .status {
-            font-size: 1.6rem;
-            padding: 30px 40px;
+            font-size: 1.1rem;
+            padding: 18px 25px;
             background: rgba(30, 30, 50, 0.8);
-            border-radius: 20px;
+            border-radius: 12px;
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
         }
@@ -212,7 +138,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
+            transition: left 0.4s;
         }
 
         .status:hover::before {
@@ -221,7 +147,6 @@
 
         .status strong {
             font-weight: 700;
-            font-size: 1.8rem;
         }
 
         .status.active {
@@ -238,22 +163,18 @@
             color: #f87171;
         }
 
-        .button-container {
-            margin-bottom: 50px;
-        }
-
         button {
-            font-size: 1.3rem;
-            padding: 22px 60px;
+            font-size: 1rem;
+            padding: 16px 50px;
             border: none;
-            border-radius: 60px;
+            border-radius: 50px;
             cursor: pointer;
             font-weight: 700;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
@@ -267,21 +188,17 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
             transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            transition: width 0.5s, height 0.5s;
         }
 
         button:hover::before {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
         }
 
         button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        button:active {
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
 
         button span {
@@ -295,7 +212,7 @@
         }
 
         .btn-enable:hover {
-            box-shadow: 0 15px 50px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 12px 40px rgba(34, 197, 94, 0.5);
         }
 
         .btn-disable {
@@ -304,17 +221,7 @@
         }
 
         .btn-disable:hover {
-            box-shadow: 0 15px 50px rgba(239, 68, 68, 0.5);
-        }
-
-        .info {
-            margin-top: 50px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.5);
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0 12px 40px rgba(239, 68, 68, 0.5);
         }
 
         .screensaver-mode {
@@ -337,18 +244,18 @@
 
         .screensaver-content {
             text-align: center;
-            animation: float 6s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
 
         .screensaver-icon {
-            font-size: 10rem;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 20px 60px rgba(139, 92, 246, 0.8));
-            animation: pulse 3s ease-in-out infinite;
+            font-size: 6rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 15px 50px rgba(139, 92, 246, 0.7));
+            animation: pulse 2.5s ease-in-out infinite;
         }
 
         .screensaver-text {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6);
             background-size: 200% 200%;
@@ -356,46 +263,17 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: gradientShift 5s ease infinite;
-            letter-spacing: -1px;
-        }
-
-        .screensaver-subtext {
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 20px;
-            font-weight: 300;
         }
 
         .time-display {
-            font-size: 6rem;
+            font-size: 4rem;
             font-weight: 200;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-            letter-spacing: 5px;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
             font-variant-numeric: tabular-nums;
         }
 
-        @keyframes orbit {
-            0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: orbit 20s linear infinite;
-        }
-
-        .particle:nth-child(1) { animation-delay: 0s; opacity: 0.3; }
-        .particle:nth-child(2) { animation-delay: -5s; opacity: 0.5; }
-        .particle:nth-child(3) { animation-delay: -10s; opacity: 0.4; }
-        .particle:nth-child(4) { animation-delay: -15s; opacity: 0.6; }
-
-        /* Warning Modal */
         .warning-modal {
             position: fixed;
             top: 0;
@@ -408,12 +286,6 @@
             align-items: center;
             justify-content: center;
             z-index: 200;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .warning-modal.show {
@@ -422,85 +294,79 @@
 
         .warning-content {
             background: rgba(30, 30, 45, 0.95);
-            padding: 40px 50px;
-            border-radius: 20px;
+            padding: 30px 40px;
+            border-radius: 15px;
             border: 2px solid rgba(239, 68, 68, 0.5);
-            max-width: 500px;
+            max-width: 420px;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(239, 68, 68, 0.3);
-            animation: slideIn 0.4s ease;
+            box-shadow: 0 15px 50px rgba(239, 68, 68, 0.3);
+            animation: slideIn 0.3s ease;
         }
 
         @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
+            from { transform: translateY(-30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
         .warning-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.6));
+            font-size: 3rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.5));
         }
 
         .warning-title {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #f87171;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .warning-text {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 30px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .warning-button {
-            padding: 15px 40px;
+            padding: 12px 35px;
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            border: none;
-            border-radius: 50px;
-            color: white;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
         }
 
         .warning-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.5);
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
+            .container {
+                max-width: 85%;
+                padding: 25px 20px;
+            }
+
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             .icon {
-                font-size: 4rem;
+                font-size: 3rem;
+                margin-bottom: 10px;
             }
-            
-            .container {
-                padding: 40px 30px;
-                width: 95%;
+
+            .subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 15px;
             }
 
             button {
-                padding: 20px 50px;
-                font-size: 1.1rem;
+                padding: 14px 40px;
+                font-size: 0.95rem;
             }
 
-            .status {
-                font-size: 1.3rem;
-                padding: 25px 30px;
-            }
-
-            .screensaver-icon {
-                font-size: 6rem;
+            .warning-content {
+                margin: 15px;
+                max-width: 90%;
             }
 
             .screensaver-text {
@@ -508,30 +374,7 @@
             }
 
             .time-display {
-                font-size: 4rem;
-            }
-
-            .screensaver-subtext {
-                font-size: 1.2rem;
-            }
-
-            .warning-content {
-                margin: 20px;
-                padding: 30px 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .container {
-                padding: 30px 20px;
+                font-size: 3rem;
             }
         }
     </style>
@@ -539,52 +382,34 @@
 <body>
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
     
     <div class="container">
-        <div class="icon-container">
-            <div class="icon-glow"></div>
-            <div class="icon">☕</div>
-        </div>
-        
+        <div class="icon">☕</div>
         <h1>NoSleep</h1>
-        <p class="subtitle">Keep Your Screen Awake</p>
+        <p class="subtitle">Keep Screen Awake</p>
         
-        <div class="status-container">
-            <div class="status inactive" id="status">
-                Screen sleep is <strong>allowed</strong>
-            </div>
+        <div class="status inactive" id="status">
+            Screen sleep is <strong>allowed</strong>
         </div>
         
-        <div class="button-container">
-            <button class="btn-enable" id="toggleBtn" onclick="toggleWakeLock()">
-                <span>Enable NoSleep</span>
-            </button>
-        </div>
+        <button class="btn-enable" id="toggleBtn" onclick="toggleWakeLock()">
+            <span>Enable NoSleep</span>
+        </button>
     </div>
 
-    <!-- Screensaver Mode -->
     <div class="screensaver-mode" id="screensaver">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
         <div class="screensaver-content">
             <div class="time-display" id="timeDisplay">00:00:00</div>
             <div class="screensaver-icon">☕</div>
             <div class="screensaver-text">NoSleep Active</div>
-            <div class="screensaver-subtext">Screen staying awake</div>
         </div>
     </div>
 
-    <!-- Warning Modal -->
     <div class="warning-modal" id="warningModal">
         <div class="warning-content">
             <div class="warning-icon">⚠️</div>
             <div class="warning-title">Tab Switched!</div>
-            <div class="warning-text">
-                NoSleep only works when this tab is in the foreground. Your screen may go to sleep while you're on other tabs.
-            </div>
+            <div class="warning-text">NoSleep only works when this tab is active. Your screen may sleep on other tabs.</div>
             <button class="warning-button" onclick="closeWarning()">Got It</button>
         </div>
     </div>
@@ -641,16 +466,11 @@
                     statusEl.className = 'status active';
                     btnEl.innerHTML = '<span>Disable NoSleep</span>';
                     btnEl.className = 'btn-disable';
-
                     screensaverTimer = setTimeout(showScreensaver, 5000);
-
-                    wakeLock.addEventListener('release', () => {
-                        console.log('Wake Lock released');
-                    });
                 } catch (err) {
                     statusEl.innerHTML = `<strong>Error:</strong> ${err.message}`;
                     statusEl.className = 'status inactive';
-                    alert('Wake Lock API is not supported in your browser or the page needs to be visible.');
+                    alert('Wake Lock not supported or page must be visible.');
                 }
             }
         }
